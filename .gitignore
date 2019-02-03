@@ -14,9 +14,16 @@
 /.fetch
 
 # If the VM crashes, it generates a dump, let's ignore it too.
-erl_crash.dump
+*erl_crash.dump
 
 # Also ignore archive artifacts (built via "mix archive.build").
 *.ez
 
+# notes
 scratchpad.txt
+
+# exvcr cassettes
+/fixture/vcr_cassettes
+
+# tests
+/test*

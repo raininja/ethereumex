@@ -7,6 +7,7 @@ defmodule Ethereumex do
 
     children = [
       worker(Ethereumex.HttpClient, [])
+      # worker(Ethereumex.IpcClient, [])
     ]
 
     opts = [strategy: :one_for_one, name: Ethereumex.Supervisor]

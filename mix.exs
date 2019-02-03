@@ -19,17 +19,18 @@ defmodule Ethereumex.Mixfile do
   end
 
   def application do
-    [application: [:gen_unix], extra_applications: [:logger], mod: {Ethereumex, []}]
+    [extra_applications: [:logger], mod: {Ethereumex, []}]
   end
 
   defp deps do
     [
       {:httpoison, "~> 1.1.0"},
       {:poison, "~> 3.1.0"},
-      {:gen_unix, git: "https://github.com/raininja/gen_unix.git"},
+      # {:shackle, git: "https://github.com/lpgauth/shackle.git"},
       {:exvcr, "~> 0.10", only: [:dev, :test], runtime: false},
       {:credo, "~> 0.9.1", only: [:dev, :test], runtime: false},
       {:abi, "~> 0.1.8", only: [:dev, :test], runtime: false},
+      {:blockchain, "~> 0.1.6", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.16", only: :dev, runtime: false},
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false}
     ]

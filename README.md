@@ -15,11 +15,12 @@ TODO:
 - [ ]  integrate abi library for encoding data to test eth_call
 - [ ]  method by method latest review of Ethereum API for JSONRPC
 - [ ]  add on/off configuration option for exVCR
-- [ ]  IPC Methods allowed
+- [ ]  locate IPC Methods allowed
 - [ ]  unix domain client
-- [ ]  whisper methods
+- [ ]  whisper methods ? (seems like deadcode)
 - [ ]  expand configuration docs
-- [ ]  geth truffle box for testing consistency
+- [ ]  geth truffle box for testing consistency (deprecated)
+- [ ]  use exethereum/blockchain and other elixir tools rather than go-ethereum for testing
 
 ## Installation
 Add Ethereumex to your `mix.exs` dependencies:
@@ -70,8 +71,8 @@ config :ethereumex,
 - [x] eth_getTransactionCount
 - [x] eth_getBlockTransactionCountByHash
 - [x] eth_getBlockTransactionCountByNumber
-- [x] eth_getUncleCountByBlockHash
-- [x] eth_getUncleCountByBlockNumber
+- [ ] eth_getUncleCountByBlockHash
+- [ ] eth_getUncleCountByBlockNumber
 - [x] eth_getCode
 - [ ] eth_sign WIP
 - [x] eth_sendTransaction
@@ -104,6 +105,7 @@ config :ethereumex,
 - [ ] db_getString [deprecated](https://github.com/ethereum/go-ethereum/issues/311)
 - [ ] db_putHex [deprecated](https://github.com/ethereum/go-ethereum/issues/311)
 - [ ] db_getHex [deprecated](https://github.com/ethereum/go-ethereum/issues/311)
+Experimental Whisper methods
 - [ ] shh_post
 - [ ] shh_version
 - [ ] shh_newIdentity

@@ -249,7 +249,8 @@ defmodule Ethereumex.HttpClientTest do
     end
   end
 
-  @tag :eth_sign
+  # @tag :eth_sign
+  @tag :skip
   describe "HttpClient.eth_sign/3" do
     test "returns signature" do
       use_cassette "eth_sign" do
@@ -494,7 +495,7 @@ defmodule Ethereumex.HttpClientTest do
   describe "HttpClient.eth_get_filter_logs/2" do
     test "returns an array of all logs matching filter with given id" do
       use_cassette "eth_get_filter_logs" do
-        result = HttpClient.eth_get_filter_logs("0x68087cc0282c35d9ad8b51bf6a35a933")
+        result = HttpClient.eth_get_filter_logs("0x2a98c5f40bfa3dee83431103c535f6fae9a8ad38")
 
         # {:ok, []} = result
         {:ok, [%{"address" => "0x2a98c5f40bfa3dee83431103c535f6fae9a8ad38", "blockHash" => "0x4f9e6d252ff3b89c89257e450e3ee6d39e63df930cd90a24f02b6715a3a78923", "blockNumber" => "0x668b4", "data" => "0x45544855534400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", "logIndex" => "0x0", "removed" => false, "topics" => ["0x5a690ecd0cb15c1c1fd6b6f8a32df0d4f56cb41a54fea7e94020f013595de796", "0x0000000000000000000000000000000000000000000000000000000000000002", "0x0000000000000000000000002f9e4311a159c12e4cf13b36f09dca9b007ee319", "0x0000000000000000000000000000000000000000000000000000000000000000"], "transactionHash" => "0xf51d8dae1e7b08b497bed633936301dcee3c34b6b667f5de0dd85795f1f491e7", "transactionIndex" => "0x0"}, %{"address" => "0x2a98c5f40bfa3dee83431103c535f6fae9a8ad38", "blockHash" => "0x4f9e6d252ff3b89c89257e450e3ee6d39e63df930cd90a24f02b6715a3a78923", "blockNumber" => "0x668b4", "data" => "0x000000000000000000000000000000000000000000000000925d699715e6e000", "logIndex" => "0x1", "removed" => false, "topics" => ["0xa9c6cbc4bd352a6940479f6d802a1001550581858b310d7f68f7bea51218cda6", "0x4554485553440000000000000000000000000000000000000000000000000000"], "transactionHash" => "0xf51d8dae1e7b08b497bed633936301dcee3c34b6b667f5de0dd85795f1f491e7", "transactionIndex" => "0x0"}, %{"address" => "0x2f9e4311a159c12e4cf13b36f09dca9b007ee319", "blockHash" => "0x4f9e6d252ff3b89c89257e450e3ee6d39e63df930cd90a24f02b6715a3a78923", "blockNumber" => "0x668b4", "data" => "0x00000000000000000000000000000000000000000000000092459a281c9e0000", "logIndex" => "0x2", "removed" => false, "topics" => ["0xa609f6bd4ad0b4f419ddad4ac9f0d02c2b9295c5e6891469055cf73c2b568fff", "0x0000000000000000000000002f9e4311a159c12e4cf13b36f09dca9b007ee319"], "transactionHash" => "0xf51d8dae1e7b08b497bed633936301dcee3c34b6b667f5de0dd85795f1f491e7", "transactionIndex" => "0x0"}]} = result
